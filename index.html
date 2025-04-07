@@ -3,9 +3,156 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Document</title>
 </head>
 <body>
-    
+
+
+    <div class="d-flex">
+        <aside id="sidebar" class="">
+            <div class="sidebar-logo">
+                <a href="" class="inner-logo">
+                    <img src="unnamed.webp" alt="">
+                    <span>QL Kí Túc Xá</span>
+                    
+                </a>
+            </div>
+            
+            <ul class="sidebar-nav">
+                
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link active">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">home</i>
+                        </div>
+                        <span>Trang chủ</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">
+                                person
+                                </i>
+                        </div>
+                        <span>Sinh Viên</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">
+                                meeting_room
+                                </i>
+                        </div>
+                        <span>Phòng Kí Túc</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">
+                                receipt_long
+                                </i>
+                        </div>
+                        <span>Hóa Đơn</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">
+                                support_agent
+                                </i>
+                        </div>
+                        <span>Yêu Cầu Hỗ Trợ</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="#" class="sidebar-link">
+                        <div class="icon-wrap">
+                            <i class="material-symbols-sharp">
+                                campaign
+                                </i>
+                        </div>
+                        <span>Thông Báo</span>
+                    </a>
+                </li>
+            
+            </ul>
+            <div class="sidebar-footer">
+                <a href="#" class="sidebar-link">
+                    <div class="icon-wrap">
+                        <i class="material-symbols-sharp">
+                            logout
+                            </i>
+                    </div>
+                    <span>Logout</span>
+                </a>
+            </div>
+        </aside>
+
+        
+        <div class="main">
+            <nav class="navbar">
+                <button class="toggler-btn ms-auto" type="button">
+                    <i class="material-symbols-sharp">
+                        menu
+                        </i>
+                </button>
+            </nav>
+            <main class="p-3">
+                <div class="container-fluid">
+                    <div class="row gy-3">
+                        <div class="col-12 col-xxl-9">
+                            <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+                                <div class="carousel-inner">
+                                <div class="carousel-item active box" data-bs-interval="2000">
+                                    <img src="" class="d-block w-100" alt="...">
+                                </div>
+                                <div class="carousel-item box" data-bs-interval="2000">
+                                    <img src="" class="d-block w-100" alt="...">
+                                </div>
+
+                                </div>
+                                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                                </button>
+                                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                                </button>
+                            </div>
+                            <div class="row ">
+                                <div class="col-4 col">
+                                    <div class="box"></div>
+                                </div>
+                                <div class="col-4 col">
+                                    <div class="box"></div>
+                                </div>
+                                <div class="col-4 col">
+                                    <div class="box"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12 col-xxl-3">
+                            <div class="box"></div>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </main>
+        </div>
+    </div>
+
+
+    <script src="bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

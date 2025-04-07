@@ -1,0 +1,155 @@
+
+:root{
+    --bg-one:#F5F5F7;
+    --fcolor-one:black;
+    --fcolor-second:#86898E;
+}
+
+body{
+    box-sizing: border-box;
+   
+    background-color: var(--bg-one) !important;
+    position: relative;
+    color: var(--fcolor-second) !important;
+}
+li{
+    list-style: none;
+}
+a{
+    text-decoration: none !important;
+    color: var(--fcolor-second) !important;
+}
+
+.main{
+    width: 100%;
+}
+
+#sidebar{
+    overflow: hidden;
+    height: 100vh;
+    width: 280px;
+    min-width: 280px;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    margin-left: -280px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-one);
+    
+}
+
+#sidebar.collapsed{
+    margin-left: 0;
+    box-shadow: 0px 0px 1000px 100px rgba(0, 0, 0, 0.05);
+}
+.toggler-btn{
+    background-color: transparent;
+    border: 0;
+}
+.toggler-btn i{
+    font-size: 2rem;
+}
+.navbar{
+    padding: 1rem 1.5rem !important;
+    position: absolute;
+    top: 0;
+    
+}
+@media screen and (min-width:992px){
+    .toggler-btn{
+        display: none;
+    }
+    #sidebar{
+        margin-left: 0;
+        position: sticky;
+        
+    }
+}
+
+.sidebar-logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inner-logo{
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem 0;
+}
+.sidebar-logo span{
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 60px;
+    color: var(--fcolor-one);
+}
+.sidebar-logo img{
+    width: 60px;
+    border-radius: 10px;
+}
+
+.sidebar-nav{
+    margin: 1rem 0 !important;
+}
+
+#sidebar .sidebar-link{
+    padding: 0.8rem ;
+    display: flex;
+    gap: 0.8rem;
+    align-items: center;
+    font-weight: 500;
+}
+#sidebar .icon-wrap{
+    width: 40px;
+    aspect-ratio: 1;
+    display: flex;
+}
+#sidebar i{
+    font-size: 2rem;
+    margin: auto;
+}
+
+#sidebar .sidebar-link{
+    transition: all 0.3s ease;
+}
+#sidebar .sidebar-link:hover{
+    border-left: solid 8px #757EE4;
+    background-color: #E2E2F1;
+    color: #757EE4 !important;
+    position: relative;
+    left: -20px;
+    width: 300px;
+}
+#sidebar .sidebar-nav a.active{
+    border-left: solid 8px #757EE4;
+    background-color: #E2E2F1;
+    color: #757EE4 !important;
+    position: relative;
+    left: -20px;
+    width: 300px;
+}
+#sidebar .sidebar-footer{
+    padding-left: 2rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+
+.box{
+    background-color: #757EE4;
+    height: 200px;
+    border-radius: 20px;
+    
+}
+.carousel{
+    margin-bottom: 20px;
+    
+}
+.carousel-item{
+    border-radius: 20px;
+}
+.carousel-item img{
+    height: 100%;
+    object-fit: cover;
+}

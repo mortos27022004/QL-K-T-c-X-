@@ -29,7 +29,7 @@ a{
     height: 100vh;
     width: 280px;
     min-width: 280px;
-    position: absolute;
+    position: fixed;
     z-index: 100;
     top: 0;
     margin-left: -280px;

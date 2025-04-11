@@ -1,10 +1,39 @@
 
 :root{
     --bg-one:#F5F5F7;
+    --second-color:#757EE4;
     --fcolor-one:black;
     --fcolor-second:#86898E;
+    --primary:#86898E;
+    --danger:#F9798B;
+    --success:#3FF0BC;
 }
-
+.c-success{
+    color: var(--success) !important;
+}
+.c-danger{
+    color: var(--danger) !important;
+}
+.c-primary{
+    color: var(--primary);
+}
+.c-hilight{
+    color: var(--fcolor-one);
+}
+h1{
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    display: inline-block;
+}
+h2{
+    font-size: 1.3rem !important;
+    font-weight: 700 !important;
+}
+h3{
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    display: inline-block;
+}
 body{
     box-sizing: border-box;
    
@@ -28,7 +57,6 @@ main{
     padding: 0 1.5rem;
 }
 #sidebar{
-    
     overflow: hidden;
     height: 100vh;
     width: 300px;
@@ -41,36 +69,26 @@ main{
     display: flex;
     flex-direction: column;
     background-color: white;
-    
 }
-
 #sidebar.collapsed{
-    margin-left: 0;
+    margin-left: -300px;
     box-shadow: 0px 0px 1000px 100px rgba(0, 0, 0, 0.05);
 }
 .toggler-btn{
     background-color: transparent;
     border: 0;
+    margin-right: 2rem;
 }
 .toggler-btn i{
     font-size: 2rem;
 }
-.navbar{
-    padding: 1rem 1.5rem !important;
-    height: 4rem;
-    background-color: var(--bg-one);
-}
+
 @media screen and (min-width:992px){
-    .toggler-btn{
-        display: none;
-    }
     #sidebar{
         margin-left: 0;
-        position: sticky;
-        
+        position: sticky;   
     }
 }
-
 .sidebar-logo{
     display: flex;
     justify-content: center;
@@ -91,12 +109,10 @@ main{
     width: 60px;
     border-radius: 10px;
 }
-
 .sidebar-nav{
     margin-top: 2rem;
     margin-left: 2rem;
 }
-
 #sidebar .sidebar-link{
     padding: 0.8rem ;
     display: flex;
@@ -138,13 +154,20 @@ main{
     margin-top: auto;
     margin-bottom: 4rem;
 }
-
-
+.navbar{
+    background-color: var(--bg-one);
+}
+.main{
+    padding:0 1rem;
+}
+.top-title{
+    margin-left: 2rem;
+    color: black !important;
+}
 .box{
     background-color: #757EE4;
-    height: 500px;
+    height: 200px;
     border-radius: 20px;
-    
 }
 .box-h{
     height: var(--heightt);
@@ -152,7 +175,6 @@ main{
 .row{
     margin-bottom: 1.5rem;
 }
-
 .carousel-item img{
     height: 100%;
     object-fit: cover;
@@ -160,5 +182,86 @@ main{
 .sticky-wrapper{
     position: sticky;
     bottom: 0;
-    top: 2.5rem;
+    top: 2rem;
+    justify-content: space-between;
+}
+@media screen and (min-width:1400px){
+    .sticky-wrapper{
+        height: 93vh; 
+    }  
+}
+.rec{
+    flex-basis: 1;
+}
+.bo{
+    background-color: #757EE4;
+    border-radius: 20px;
+    height: 200px;
+}
+.sub-col .row{
+    margin-bottom: 0;
+}
+
+main .item{
+    background-color: white;
+    border-radius: 25px;
+    padding: 2rem;
+    height: 100%;
+}
+main .inner-content{
+    display: flex;
+    flex-direction: column;
+}
+main .heading{
+    display: flex;
+    align-items: center;
+}
+main .heading h3{
+    margin-left: 1rem;
+    color: black;
+    flex: 1;
+    
+}
+
+main h1{
+    color: black;
+    align-self: center;
+}
+main .icon{
+    width: 45px;
+    aspect-ratio: 1;
+    background-color: var(--second-color);
+    display: flex;
+    border-radius: 50%;
+
+}
+main .icon span{
+    margin: auto;
+    color: white;
+}
+main .section-1 .heading h3{
+    margin-left: 0;
+    padding-right: 40px;
+    text-align: center;
+}
+main .button{
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    border: 2px dashed var(--second-color);
+    color: var(--second-color);
+}
+main .button .inner-btn{
+    display: flex;
+    align-items: center;
+}
+main .button .icon-btn{
+    font-size: 2rem;
+}
+main .button span{
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-left: 0.8rem;
 }

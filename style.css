@@ -1,7 +1,7 @@
 
 :root{
     --bg-one:#F5F5F7;
-    --second-color:#757EE4;
+    --second-color:#BC2626;
     --fcolor-one:black;
     --fcolor-second:#86898E;
     --primary:#86898E;
@@ -134,17 +134,17 @@ main{
     transition: all 0.3s ease;
 }
 #sidebar .sidebar-link:hover{
-    border-left: solid 8px #757EE4;
+    border-left: solid 8px var(--second-color);
     background-color: #E2E2F1;
-    color: #757EE4 !important;
+    color: var(--second-color) !important;
     position: relative;
     left: -20px;
     width: 300px;
 }
 #sidebar .sidebar-nav a.active{
-    border-left: solid 8px #757EE4;
+    border-left: solid 8px var(--second-color);
     background-color: #E2E2F1;
-    color: #757EE4 !important;
+    color: var(--second-color) !important;
     position: relative;
     left: -20px;
     width: 300px;
@@ -165,7 +165,7 @@ main{
     color: black !important;
 }
 .box{
-    background-color: #757EE4;
+    background-color: var(--second-color);
     height: 200px;
     border-radius: 20px;
 }
@@ -194,7 +194,7 @@ main{
     flex-basis: 1;
 }
 .bo{
-    background-color: #757EE4;
+    background-color: var(--second-color);
     border-radius: 20px;
     height: 200px;
 }
@@ -256,6 +256,7 @@ main .button{
 main .button .inner-btn{
     display: flex;
     align-items: center;
+    gap: 1rem;
 }
 main .button .icon-btn{
     font-size: 2rem;
@@ -263,5 +264,4 @@ main .button .icon-btn{
 main .button span{
     font-size: 1.1rem;
     font-weight: 500;
-    margin-left: 0.8rem;
 }

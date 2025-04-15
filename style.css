@@ -1,6 +1,6 @@
 
 :root{
-    --bg-one:#F5F5F7;
+    --bg-one:#fcf8f8;
     --second-color:#BC2626;
     --fcolor-one:black;
     --fcolor-second:#86898E;
@@ -167,7 +167,8 @@ main{
 .box{
     background-color: var(--second-color);
     height: 200px;
-    border-radius: 20px;
+    border-radius: 5px;
+   
 }
 .box-h{
     height: var(--heightt);
@@ -190,22 +191,14 @@ main{
         height: 93vh; 
     }  
 }
-.rec{
-    flex-basis: 1;
-}
-.bo{
-    background-color: var(--second-color);
-    border-radius: 20px;
-    height: 200px;
-}
 .sub-col .row{
     margin-bottom: 0;
 }
 
 main .item{
     background-color: white;
-    border-radius: 25px;
-    padding: 2rem;
+    border-radius: 5px;
+    padding: 1.5rem;
     height: 100%;
 }
 main .inner-content{
@@ -228,7 +221,7 @@ main h1{
     align-self: center;
 }
 main .icon{
-    width: 45px;
+    width: 40px;
     aspect-ratio: 1;
     background-color: var(--second-color);
     display: flex;
@@ -245,11 +238,11 @@ main .section-1 .heading h3{
     text-align: center;
 }
 main .button{
-    height: 100px;
+    height: 70px;
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 25px;
+    border-radius: 5px;
     border: 2px dashed var(--second-color);
     color: var(--second-color);
 }

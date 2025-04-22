@@ -1,12 +1,21 @@
+<?php
+session_start();
+// Kiểm tra nếu người dùng chưa đăng nhập hoặc không phải là admin
+if (!isset($_SESSION['username']) || $_SESSION['role'] != 'admin') {
+    header("Location: index.php"); // Chuyển hướng về trang đăng nhập nếu chưa đăng nhập hoặc không phải admin
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style/style.css">
     
-    <link rel="stylesheet" href="bootstrap.min.css">
-    <link rel="shortcut icon" href="unnamed.webp">
+    <link rel="stylesheet" href="../style/bootstrap.min.css">
+    <link rel="shortcut icon" href="images/unnamed.webp">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Sharp" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Kí túc xá</title>
@@ -17,8 +26,8 @@
     <div class="d-flex">
         <aside id="sidebar" class="">
             <div class="sidebar-logo">
-                <a href="" class="inner-logo">
-                    <img src="unnamed.webp" alt="">
+                <a href="admin.php" class="inner-logo">
+                    <img src="images/unnamed.webp" alt="">
                     <span>QL Kí Túc Xá</span>   
                 </a>
             </div>
@@ -95,7 +104,7 @@
             
             </ul>
             <div class="sidebar-footer">
-                <a href="#" class="sidebar-link">
+                <a href="logout.php" class="sidebar-link">
                     <div class="icon-wrap">
                         <i class="material-symbols-sharp">
                             logout
@@ -194,7 +203,7 @@
                                 <div class="col-12">
                                     <div class="row g-4">
                                         <div class="col-6 col-xxl-12">
-                                            <div class="button">
+                                            <a href="add_SV.php" class="button">
                                                 <div class="inner-btn">
                                                     <span class="material-symbols-sharp icon-btn">
                                                         add
@@ -202,7 +211,7 @@
                                                     <span>Thêm sinh viên</span>
                                                 </div>
                                                 
-                                            </div>
+                                            </a>
                                         </div>
                                         <div class="col-6 col-xxl-12">
                                             <div class="button">
@@ -227,7 +236,7 @@
     </div>
 
 
-    <script src="bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="../script/bootstrap.bundle.min.js"></script>
+    <script src="../script/script.js"></script>
 </body>
 </html>

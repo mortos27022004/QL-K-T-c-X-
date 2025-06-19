@@ -1,18 +1,15 @@
 <?php
-// Thông tin kết nối cơ sở dữ liệu
-$servername = "localhost";
-$username = "root";      // Tên người dùng MySQL
-$password = "";          // Mật khẩu nếu có, hoặc để trống nếu không có
-$dbname = "QLKTX"; // Tên cơ sở dữ liệu
+// Cấu hình kết nối CSDL
+    $host = "localhost";
+    $db_user = "root";
+    $db_pass = "";
+    $db_name = "QLKTX";
 
-try {
-    // Tạo kết nối với PDO
-    $pdo = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    
-    // Thiết lập chế độ lỗi PDO
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-} catch (PDOException $e) {
-    echo "Kết nối thất bại: " . $e->getMessage();
-}
+    // Tạo kết nối
+    $conn = new mysqli($host, $db_user, $db_pass, $db_name,3307);
+
+    // Kiểm tra kết nối
+    if ($conn->connect_error) {
+        die("Kết nối CSDL thất bại: " . $conn->connect_error);
+    }
 ?>

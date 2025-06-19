@@ -1,26 +1,59 @@
 <?php
-session_start();
-include('config.php'); // Kết nối cơ sở dữ liệu
+session_start(); // Bắt đầu session
+require_once 'config.php'; // Gọi file cấu hình CSDL
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Lấy thông tin đăng nhập từ form
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+// Nhận dữ liệu từ form
+$username = trim($_POST['username']);
+$password = trim($_POST['password']);
 
-    // Truy vấn cơ sở dữ liệu để lấy thông tin người dùng
-    $sql = "SELECT * FROM users WHERE username = ?";
-    $stmt = $pdo->prepare($sql);
-    $stmt->execute([$username]);
-    $user = $stmt->fetch();
+// Kiểm tra xem username có tồn tại không
+$sql = "SELECT * FROM user WHERE username = ?";
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("s", $username);
+$stmt->execute();
+$result = $stmt->get_result();
 
-    if ($user && password_verify($password, $user['password'])) {
+// Nếu tồn tại username
+if ($result->num_rows === 1) {
+    $user = $result->fetch_assoc();
+
+    // Kiểm tra mật khẩu
+    if (password_verify($password, $user['password'])) {
         // Lưu thông tin người dùng vào session
+        $_SESSION['user_id'] = $user['user_id'];
         $_SESSION['username'] = $user['username'];
+        $_SESSION['name'] = $user['name'];
         $_SESSION['role'] = $user['role'];
-        header("Location: admin.php"); // Trang dành cho admin
-        
+        if($_SESSION['role'] == 'landlord'){
+            echo "<script>
+                alert(' HOST Đăng nhập thành công!');
+                window.location.href = 'host.php';
+            </script>";
+        }else{
+            echo "<script>
+                alert('TENANT Đăng nhập thành công!');
+                window.location.href = 'index.php';
+            </script>";
+        }
+
+        exit;
     } else {
-        echo "Tên đăng nhập hoặc mật khẩu không đúng!";
+        // Mật khẩu sai
+        echo "<script>
+            alert('Sai mật khẩu!');
+            window.history.back();
+        </script>";
+        exit;
     }
+} else {
+    // Không tìm thấy tài khoản
+    echo "<script>
+        alert('Tên đăng nhập không tồn tại!');
+        window.history.back();
+    </script>";
+    exit;
 }
+
+$stmt->close();
+$conn->close();
 ?>
